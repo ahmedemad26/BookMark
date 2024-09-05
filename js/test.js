@@ -6,7 +6,7 @@ var urlList = [];
 
 if (localStorage.getItem("urlList")) {
     gData();
-    console.log(urlList);
+    display(urlList)
 }
 
 function adddUrl() {
@@ -17,9 +17,8 @@ function adddUrl() {
     }
     urlList.push(urlS) 
     sData();
-    display(urlList);
     clear();
-
+    display(urlList);
     }else{
         alert("Not Valid")
     }
@@ -54,11 +53,11 @@ function deleteBookmarak(index) {
     urlList.splice(index , 1);
 
     display(urlList);
-    console.log("hi");
+    sData();
 }
 
 function sData() {
-    localStorage.setItem("Data",JSON.stringify(urlList))
+    localStorage.setItem("urlList",JSON.stringify(urlList))
 }
 
 function gData() {
